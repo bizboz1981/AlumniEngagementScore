@@ -45,6 +45,7 @@ namespace AlumniEngagementScore
             this.lblConsentFactor = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnRecalculate = new System.Windows.Forms.Button();
+            this.btnToCSV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,13 +194,23 @@ namespace AlumniEngagementScore
             this.btnRecalculate.UseVisualStyleBackColor = true;
             this.btnRecalculate.Visible = false;
             this.btnRecalculate.Click += new System.EventHandler(this.btnRecalculate_Click);
-
+            // 
+            // btnToCSV
+            // 
+            this.btnToCSV.Location = new System.Drawing.Point(983, 438);
+            this.btnToCSV.Name = "btnToCSV";
+            this.btnToCSV.Size = new System.Drawing.Size(163, 29);
+            this.btnToCSV.TabIndex = 16;
+            this.btnToCSV.Text = "Export CSV";
+            this.btnToCSV.UseVisualStyleBackColor = true;
+            this.btnToCSV.Click += new System.EventHandler(this.btnToCSV_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 678);
+            this.Controls.Add(this.btnToCSV);
             this.Controls.Add(this.btnRecalculate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblConsentFactor);
@@ -243,6 +254,7 @@ namespace AlumniEngagementScore
         private System.Windows.Forms.Label lblConsentFactor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnRecalculate;
+        private System.Windows.Forms.Button btnToCSV;
     }
 }
 
