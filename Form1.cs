@@ -60,14 +60,46 @@ namespace AlumniEngagementScore
             int ageFactor = int.Parse(txtAgeFactor.Text);
             int donationFactor = int.Parse(txtDonationFactor.Text);
             int consentFactor = int.Parse(txtConsentFactor.Text);
-            
+            int optOutFactor = int.Parse(txtOptOutFactor.Text);
+            int openFactor = int.Parse(txtOpenFactor.Text);
+            int clickFactor = int.Parse(txtClickFactor.Text);
+            int orgFactor = int.Parse(txtOrgFactor.Text);
+            int positionFactor = int.Parse(txtPositionFactor.Text);
+            int meetingsFactor = int.Parse(txtMeetingsFactor.Text);
+            int emailFactor = int.Parse(txtEmailFactor.Text);
+            int eventParticipationsFactor = int.Parse(txtEventsPartFactor.Text);
+            int eventRegistrationsFactor = int.Parse(txtEventsRegFactor.Text);
+            int updateDetailsFactor = int.Parse(txtUpdateDetailsFactor.Text);
+
             // Parse datatable (spreadsheet) values to ints and calculate
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                int age = Convert.ToInt32(row.Cells["Age"].Value);
-                int amount = Convert.ToInt32(row.Cells["Donations"].Value);
-                int consent = Convert.ToInt32(row.Cells["Consent"].Value);
-                row.Cells["newColumnName"].Value = (age * ageFactor) + (donationFactor * amount) + (consent * consentFactor); //actual calculation
+                //int age = Convert.ToInt32(row.Cells["Age"].Value);
+                //int amount = Convert.ToInt32(row.Cells["Donations"].Value);
+                int consent = Convert.ToInt32(row.Cells["Opt-In"].Value);
+                int optOut = Convert.ToInt32(row.Cells["Opt-Out"].Value);
+                int opens = Convert.ToInt32(row.Cells["Opened"].Value);
+                int clicks = Convert.ToInt32(row.Cells["Clicked"].Value);
+                int org = Convert.ToInt32(row.Cells["Primary Business Organisation"].Value);
+                int position = Convert.ToInt32(row.Cells["Primary Business Position"].Value);
+                int meetings = Convert.ToInt32(row.Cells["Number of Meetings"].Value);
+                int email = Convert.ToInt32(row.Cells["Email 1 Number"].Value);
+                int eventParticipations = Convert.ToInt32(row.Cells["Event Participations"].Value);
+                int eventRegistrations = Convert.ToInt32(row.Cells["Event Registrations"].Value);
+                int updateDetails = Convert.ToInt32(row.Cells["Update Details"].Value);
+
+                //actual calculation
+                row.Cells["newColumnName"].Value =  (consent * consentFactor)+
+                                                    (optOut * optOutFactor)+
+                                                    (opens * openFactor)+
+                                                    (clicks * clickFactor)+
+                                                    (org * orgFactor)+
+                                                    (position * positionFactor)+
+                                                    (meetings * meetingsFactor)+
+                                                    (email * emailFactor)+
+                                                    (eventParticipations * eventParticipationsFactor)+
+                                                    (eventRegistrations * eventRegistrationsFactor)+
+                                                    (updateDetails * updateDetailsFactor); 
             }
         }
         
